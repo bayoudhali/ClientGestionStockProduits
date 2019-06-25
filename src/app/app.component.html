@@ -1,4 +1,11 @@
-<h1>Category</h1>
-<app-produit></app-produit>
-
+<div class="row">
+  <div class="col-lg-2" *ngIf="Visbilite">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-lg-10">
+      <app-navbar [showSiderBar]="Visbilite"
+    (showSiderBarChange)="onShowSiderBarChange($event)"></app-navbar>
+    <app-content></app-content>
+  </div>
+</div>
 <router-outlet></router-outlet>

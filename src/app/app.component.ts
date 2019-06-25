@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ClientGestionStockProduits';
+  Visbilite: boolean = false;
+  onShowSiderBarChange(Visbilite){
+    this.Visbilite=Visbilite;
+  }
 }
