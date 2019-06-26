@@ -1,6 +1,53 @@
 <h2>Produits</h2>
-  <ul>
-  <li *ngFor="let produit of produits">
-    Ref: {{produit.ref}},Qauntite: {{produit.quantie}},Prix Unitaire: {{produit.prixunitaire}}
-  </li>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7">
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th>Reference</th><th>Quantite</th><th>Prix Unitaire</th><th><button type="button" class="btn btn-outline-success" (click)="operation = 'add';">Add</button></th>
+  </tr>
+</thead>
+<tbody>
+<tr *ngFor="let produit of produits">
+  <td>{{produit.ref}}</td><td>{{produit.quantite}}</td><td>{{produit.prixunitaire}}</td>
+  <td><button type="button" class="btn btn-outline-info" (click)="operation = 'edit'; selectedProduit = produit">Edit</button>
+    <button type="button" class="btn btn-outline-danger" (click)="operation = 'remove';deleteProduit(); selectedProduit = produit">remove</button></td>
+</tr>
+</tbody>
+</table>
+    </div>
+    <div class="col-lg-5">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          {{operation == 'add' ? 'Ajouter Produit' :
+            operation == 'edit' ? 'Modifier  Produit' :
+            operation == 'remove' ? 'Supprimer Produit' : ''}}
+
+        </div>
+        <div class="card-body">
+        <form [formGroup]="produitForm">
+          <div class="form-group">
+            <label>Reference</label>
+            <input type="text" class="form-control" formControlName="ref" [(ngModel)]="selectedProduit.ref">
+          </div>
+          <div class="form-group">
+            <label>Quantite</label>
+            <input type="number" class="form-control" formControlName="quantite" [(ngModel)]="selectedProduit.quantite">
+          </div>
+          <div class="form-group">
+            <label>Prix Unitaire</label>
+            <input type="number" class="form-control" formControlName="prixunitaire" [(ngModel)]="selectedProduit.prixunitaire">
+          </div>
+          <button type="button" class="btn btn-success" (click)="operation == 'add' ? addProduit() : updateProduit()">{{operation == 'add' ? 'Ajouter' :
+            operation == 'edit' ? 'Modifier' :
+            operation == 'remove' ? 'Supprimer' : ''}}</button>
+        </form>
+        </div>
+        <div class="card-footer">
+
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
