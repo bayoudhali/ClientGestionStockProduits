@@ -49,26 +49,25 @@ this.ServiceProduit.addProduit(p).subscribe(
     this.loadProduit();
 
   }
-);
+)
 }
-updateProduit(){
+//updateProduit(){
 
-  this.ServiceProduit.updateProduit().subscribe(
-    res => {
-      this.loadProduit();
+//  this.ServiceProduit.updateProduit().subscribe(
+  //  res => {
+  //    this.loadProduit();
 
-    }
-  );
-}
+  //  }
+//  )
+//}
 
-deleteProduit(){
-  this.ServiceProduit.deleteProduit().subscribe(
+//deleteProduit(){
+  //this.ServiceProduit.deleteProduit().subscribe(
 
-    res => {
-      this.loadProduit();
-    }
-  );
-}
+    //res => {
+      //this.loadProduit();
+  //  }
+//}
 
 initProduit() {
   this.selectedProduit = new Produit();
