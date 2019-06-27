@@ -24,6 +24,6 @@ updateProduit(produit: Produit):Observable<any>{
 }
 deleteProduit(id:number):Observable<any>{
 
-return this.http.delete(API_URLS.Produit_Url + '/${ref}');
+return this.http.delete(API_URLS.Produit_Url + '/${id}');
 }
 }

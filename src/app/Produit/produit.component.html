@@ -5,12 +5,12 @@
 <table class="table table-hover">
 <thead>
   <tr>
-    <th>Reference</th><th>Quantite</th><th>Prix Unitaire</th><th><button type="button" class="btn btn-outline-success" (click)="operation = 'add';">Add</button></th>
+  <th>Id</th><th>Reference</th><th>Quantite</th><th>Prix Unitaire</th><th><button type="button" class="btn btn-outline-success" (click)="operation = 'add';">Add</button></th>
   </tr>
 </thead>
 <tbody>
 <tr *ngFor="let produit of produits">
-  <td>{{produit.ref}}</td><td>{{produit.quantite}}</td><td>{{produit.prixunitaire}}</td>
+<td>{{produit.id}}</td><td>{{produit.ref}}</td><td>{{produit.quantite}}</td><td>{{produit.prixunitaire}}</td>
   <td><button type="button" class="btn btn-outline-info" (click)="operation = 'edit'; selectedProduit = produit">Edit</button>
     <button type="button" class="btn btn-outline-danger" (click)="operation = 'remove';deleteProduit(); selectedProduit = produit">remove</button></td>
 </tr>
